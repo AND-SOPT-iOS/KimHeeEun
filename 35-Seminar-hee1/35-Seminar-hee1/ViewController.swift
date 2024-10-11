@@ -33,7 +33,10 @@ class ViewController: UIViewController {
     
     private let feedbackTextView: UITextView = {
         let textView = UITextView()
-        textView.font = .systemFont(ofSize: 14)
+        
+        textView.font = .systemFont(ofSize: 20)
+        textView.textColor = .darkGray
+        
         textView.layer.borderColor = UIColor.gray.cgColor
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 5
@@ -59,10 +62,9 @@ class ViewController: UIViewController {
         return button
     }()
     
-    
     private var pushMode = true {
         didSet {
-            updateUI()
+            updateUI() // pushMode 변경 시마다 updateUI()호출
         }
     }
     
@@ -139,11 +141,8 @@ class ViewController: UIViewController {
             ]
         )
     }
+    
 
-    
-    
-    
-    
     private func updateUI() {
         let newTitleText = "전환 모드 변경 : \(pushModeText)"
         pushModeToggleButton.setTitle(newTitleText, for: .normal)
@@ -152,7 +151,6 @@ class ViewController: UIViewController {
     private var pushModeText: String {
         return pushMode ? "네비게이션" : "모달"
     }
-    
     
     @objc func nextButtonTapped() {
         transitionToNextViewController()
