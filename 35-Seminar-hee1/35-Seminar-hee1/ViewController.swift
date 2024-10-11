@@ -18,14 +18,12 @@ class ViewController: UIViewController {
         label.numberOfLines = 0 // 0(무한대) or 2, 3, 4, ...
         return label
     }()
-    private let subTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "전환 모드 선택 : 네비게이션"
-        label.textColor = .lightGray
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 18)
-        label.numberOfLines = 0 // 0(무한대) or 2, 3, 4, ...
-        return label
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "taeyomi")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
     }()
     
     private let feelingTextField: UITextField = {
@@ -44,6 +42,16 @@ class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
+    }()
+    
+    private let pushModeLabel: UILabel = {
+        let label = UILabel()
+        label.text = " "
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 18)
+        label.numberOfLines = 0 // 0(무한대) or 2, 3, 4, ...
+        return label
     }()
     
     private lazy var pushModeToggleButton: UIButton = {
@@ -69,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, subTitleLabel, feelingTextField, nextButton, pushModeToggleButton].forEach {
+        [titleLabel, imageView, feelingTextField, nextButton, pushModeLabel, pushModeToggleButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -84,11 +92,13 @@ class ViewController: UIViewController {
                 ),
                 titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
-                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-                subTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                imageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+                imageView.widthAnchor.constraint(equalToConstant: 200),
+                imageView.heightAnchor.constraint(equalToConstant: 200),
                 
                 feelingTextField.topAnchor.constraint(
-                    equalTo: subTitleLabel.bottomAnchor,
+                    equalTo: imageView.bottomAnchor,
                     constant: 20
                 ),
                 feelingTextField.leadingAnchor.constraint(
@@ -101,15 +111,20 @@ class ViewController: UIViewController {
                 ),
                 feelingTextField.heightAnchor.constraint(equalToConstant: 40),
                 
-                nextButton.topAnchor.constraint(
-                    equalTo: feelingTextField.bottomAnchor,
-                    constant: 20
-                ),
+                
+                pushModeLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
+                pushModeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+                
+                
+                nextButton.bottomAnchor.constraint(equalTo: pushModeToggleButton.topAnchor, constant: -20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 nextButton.heightAnchor.constraint(equalToConstant: 50),
                 nextButton.widthAnchor.constraint(equalToConstant: 200),
                 
-                pushModeToggleButton.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 20),
+
+                pushModeToggleButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+                
                 pushModeToggleButton.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
                 pushModeToggleButton.heightAnchor.constraint(equalTo: nextButton.heightAnchor),
                 pushModeToggleButton.widthAnchor.constraint(equalTo: nextButton.widthAnchor)
@@ -119,7 +134,7 @@ class ViewController: UIViewController {
     }
     //@objc = objectiveC
     private func updateUI() {
-        self.subTitleLabel.text = pushMode ? "네비게이션" : "모달"
+        self.pushModeLabel.text = pushMode ? "네비게이션" : "모달"
     }
     
     @objc func nextButtonTapped() {
@@ -153,4 +168,3 @@ class ViewController: UIViewController {
     }
     
 }
-
