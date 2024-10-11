@@ -48,25 +48,16 @@ class ViewController: UIViewController {
         return button
     }()
     
-    private let pushModeLabel: UILabel = {
-        let label = UILabel()
-        label.text = " "
-        label.textColor = .lightGray
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 18)
-        label.numberOfLines = 0 // 0(무한대) or 2, 3, 4, ...
-        return label
-    }()
-    
     private lazy var pushModeToggleButton: UIButton = {
         let button = UIButton()
-        button.setTitle("전환 모드 변경", for: .normal)
+        
+        let text = pushMode ? "네비게이션" : "모달"
+        button.setTitle("전환 모드 변경 : \(text)", for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(toggleButtonTapped), for: .touchUpInside)
         return button
     }()
-    
     
     
     private var pushMode = true
@@ -86,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, imageView, subTitleLabel, feelingTextView, nextButton, pushModeLabel, pushModeToggleButton].forEach {
+        [titleLabel, imageView, subTitleLabel, feelingTextView, nextButton, pushModeToggleButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -128,10 +119,6 @@ class ViewController: UIViewController {
                     equalToConstant: 200
                   ),
                 
-                pushModeLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
-                pushModeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-
-                
                 nextButton.bottomAnchor.constraint(equalTo: pushModeToggleButton.topAnchor, constant: -20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 nextButton.heightAnchor.constraint(equalToConstant: 50),
@@ -153,7 +140,8 @@ class ViewController: UIViewController {
     
     
     private func updateUI() {
-        self.pushModeLabel.text = pushMode ? "네비게이션" : "모달"
+        let text = pushMode ? "네비게이션" : "모달"
+        self.pushModeToggleButton.setTitle("전환 모드 변경 : \(text)", for: .normal)
     }
     
     @objc func nextButtonTapped() {
