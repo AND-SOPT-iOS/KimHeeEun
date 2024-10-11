@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         return label
     }()
     
-    private let feelingTextView: UITextView = {
+    private let feedbackTextView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: 14)
         textView.layer.borderColor = UIColor.gray.cgColor
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         textView.layer.cornerRadius = 5
         return textView
     }()
+    
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
@@ -50,9 +51,8 @@ class ViewController: UIViewController {
     
     private lazy var pushModeToggleButton: UIButton = {
         let button = UIButton()
-        
-        let text = pushMode ? "네비게이션" : "모달"
-        button.setTitle("전환 모드 변경 : \(text)", for: .normal)
+        let buttonTitle = "전환 모드 변경 : \(pushModeText)"
+        button.setTitle(buttonTitle, for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(toggleButtonTapped), for: .touchUpInside)
@@ -60,8 +60,13 @@ class ViewController: UIViewController {
     }()
     
     
-    private var pushMode = true
+    private var pushMode = true {
+        didSet {
+            updateUI()
+        }
+    }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -70,14 +75,13 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
+
     private func setStyle() {
         self.view.backgroundColor = .white
     }
     
     private func setUI() {
-        [titleLabel, imageView, subTitleLabel, feelingTextView, nextButton, pushModeToggleButton].forEach {
+        [titleLabel, imageView, subTitleLabel,feedbackTextView, nextButton, pushModeToggleButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -103,19 +107,19 @@ class ViewController: UIViewController {
                 ),
                 subTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
-                feelingTextView.topAnchor.constraint(
+                feedbackTextView.topAnchor.constraint(
                     equalTo: subTitleLabel.bottomAnchor,
                     constant: 10
                 ),
-                feelingTextView.leadingAnchor.constraint(
+                feedbackTextView.leadingAnchor.constraint(
                     equalTo: view.leadingAnchor,
                     constant: 20
                 ),
-                feelingTextView.trailingAnchor.constraint(
+                feedbackTextView.trailingAnchor.constraint(
                     equalTo: view.trailingAnchor,
                     constant: -20
                 ),
-                feelingTextView.heightAnchor.constraint(
+                feedbackTextView.heightAnchor.constraint(
                     equalToConstant: 200
                   ),
                 
@@ -139,10 +143,16 @@ class ViewController: UIViewController {
     
     
     
+    
     private func updateUI() {
-        let text = pushMode ? "네비게이션" : "모달"
-        self.pushModeToggleButton.setTitle("전환 모드 변경 : \(text)", for: .normal)
+        let newTitleText = "전환 모드 변경 : \(pushModeText)"
+        pushModeToggleButton.setTitle(newTitleText, for: .normal)
     }
+    
+    private var pushModeText: String {
+        return pushMode ? "네비게이션" : "모달"
+    }
+    
     
     @objc func nextButtonTapped() {
         transitionToNextViewController()
@@ -150,7 +160,7 @@ class ViewController: UIViewController {
     private func transitionToNextViewController() {
         let nextViewController = DetailViewController()
         
-        guard let title = feelingTextView.text else {
+        guard let title = feedbackTextView.text else {
             return
         }
         
