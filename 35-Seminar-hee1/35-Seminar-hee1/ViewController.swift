@@ -9,13 +9,11 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    // 선언과 동시에 초기화하는 방식
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "희은의 세미나 첫 실습"
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20)
-        label.numberOfLines = 0 // 0(무한대) or 2, 3, 4, ...
+        label.font = .systemFont(ofSize: 30)
         return label
     }()
     
@@ -26,15 +24,21 @@ class ViewController: UIViewController {
         return imageView
     }()
     
-    private let feelingTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "소감을 입력해주세요."
-        textField.clearButtonMode = .whileEditing
-        textField.layer.borderColor = UIColor.gray.cgColor
-        textField.layer.borderWidth = 1
-        return textField
+    private let subTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "첫 세미나의 소감을 입력하시오."
+        label.textColor = .darkGray
+        return label
     }()
     
+    private let feelingTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = .systemFont(ofSize: 14)
+        textView.layer.borderColor = UIColor.gray.cgColor
+        textView.layer.borderWidth = 1
+        textView.layer.cornerRadius = 5
+        return textView
+    }()
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
@@ -63,6 +67,8 @@ class ViewController: UIViewController {
         return button
     }()
     
+    
+    
     private var pushMode = true
     
     override func viewDidLoad() {
@@ -72,12 +78,15 @@ class ViewController: UIViewController {
         setLayout()
     }
     
+    
+    
+    
     private func setStyle() {
         self.view.backgroundColor = .white
     }
     
     private func setUI() {
-        [titleLabel, imageView, feelingTextField, nextButton, pushModeLabel, pushModeToggleButton].forEach {
+        [titleLabel, imageView, subTitleLabel, feelingTextView, nextButton, pushModeLabel, pushModeToggleButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -88,7 +97,7 @@ class ViewController: UIViewController {
             [
                 titleLabel.topAnchor.constraint(
                     equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 20
+                    constant: 30
                 ),
                 titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
@@ -97,42 +106,52 @@ class ViewController: UIViewController {
                 imageView.widthAnchor.constraint(equalToConstant: 200),
                 imageView.heightAnchor.constraint(equalToConstant: 200),
                 
-                feelingTextField.topAnchor.constraint(
+                subTitleLabel.topAnchor.constraint(
                     equalTo: imageView.bottomAnchor,
-                    constant: 20
+                    constant: 10
                 ),
-                feelingTextField.leadingAnchor.constraint(
+                subTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                feelingTextView.topAnchor.constraint(
+                    equalTo: subTitleLabel.bottomAnchor,
+                    constant: 10
+                ),
+                feelingTextView.leadingAnchor.constraint(
                     equalTo: view.leadingAnchor,
                     constant: 20
                 ),
-                feelingTextField.trailingAnchor.constraint(
+                feelingTextView.trailingAnchor.constraint(
                     equalTo: view.trailingAnchor,
                     constant: -20
                 ),
-                feelingTextField.heightAnchor.constraint(equalToConstant: 40),
-                
+                feelingTextView.heightAnchor.constraint(
+                    equalToConstant: 200
+                  ),
                 
                 pushModeLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
                 pushModeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
                 
-                
                 nextButton.bottomAnchor.constraint(equalTo: pushModeToggleButton.topAnchor, constant: -20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 nextButton.heightAnchor.constraint(equalToConstant: 50),
-                nextButton.widthAnchor.constraint(equalToConstant: 200),
-                
+                nextButton.leftAnchor.constraint(equalTo: pushModeToggleButton.leftAnchor),
+                nextButton.rightAnchor.constraint(equalTo: pushModeToggleButton.rightAnchor),
 
                 pushModeToggleButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
                 
                 pushModeToggleButton.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
                 pushModeToggleButton.heightAnchor.constraint(equalTo: nextButton.heightAnchor),
-                pushModeToggleButton.widthAnchor.constraint(equalTo: nextButton.widthAnchor)
+                pushModeToggleButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+                pushModeToggleButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20)
                 
             ]
         )
     }
-    //@objc = objectiveC
+
+    
+    
+    
     private func updateUI() {
         self.pushModeLabel.text = pushMode ? "네비게이션" : "모달"
     }
@@ -143,7 +162,7 @@ class ViewController: UIViewController {
     private func transitionToNextViewController() {
         let nextViewController = DetailViewController()
         
-        guard let title = feelingTextField.text else {
+        guard let title = feelingTextView.text else {
             return
         }
         
