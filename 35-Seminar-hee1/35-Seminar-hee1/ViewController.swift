@@ -94,7 +94,7 @@ class ViewController: UIViewController {
             [
                 titleLabel.topAnchor.constraint(
                     equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 30
+                    constant: 25
                 ),
                 titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
@@ -121,9 +121,9 @@ class ViewController: UIViewController {
                     equalTo: view.trailingAnchor,
                     constant: -20
                 ),
-                feedbackTextView.heightAnchor.constraint(
-                    equalToConstant: 200
-                  ),
+                feedbackTextView.bottomAnchor.constraint(
+                    equalTo: nextButton.topAnchor, constant: -20
+                ),
                 
                 nextButton.bottomAnchor.constraint(equalTo: pushModeToggleButton.topAnchor, constant: -20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
