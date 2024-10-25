@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class TossViewController: UIViewController {
 
     private let scrollView = UIScrollView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -35,9 +35,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setStyle()
         setUI()
         setLayout()
+        setUpButton()
     }
 
     private func setStyle() {
@@ -47,13 +49,7 @@ class ViewController: UIViewController {
     private func setUI() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(titleView)
-        contentView.addSubview(subTitleView)
-        contentView.addSubview(versionInfoView)
-        contentView.addSubview(previewView)
-        contentView.addSubview(ownerView)
-        contentView.addSubview(appScoreView)
-        contentView.addSubview(reviewView)
+        [titleView, subTitleView, versionInfoView, previewView, ownerView, appScoreView, reviewView].forEach { contentView.addSubview($0) }
     }
     
     private func setLayout() {
@@ -107,5 +103,23 @@ class ViewController: UIViewController {
 
     }
     
+    private func setUpButton() {
+        versionInfoView.updateRecordButton.addTarget(self, action: #selector(updateRecordButtonTapped), for: .touchUpInside)
+        
+        appScoreView.allReviewButton.addTarget(self, action: #selector(allReviewButtonTapped), for: .touchUpInside)
+    }
 }
 
+extension TossViewController {
+    @objc private func updateRecordButtonTapped() {
+        print("updateRecordButtonTapped")
+        let nextVC = UpdateRecordViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc private func allReviewButtonTapped() {
+        print("allReviewButtonTapped")
+        let nextVC = AllReviewViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+}

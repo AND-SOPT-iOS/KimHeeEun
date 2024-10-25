@@ -28,7 +28,7 @@ final class AppScoreView: UIView {
         $0.textColor = .secondaryLabel
         $0.textAlignment = .center
     }
-    private lazy var allReviewButton = UIButton().then {
+    lazy var allReviewButton = UIButton().then {
         $0.setTitle("모두 보기", for: .normal)
         $0.backgroundColor = .systemBackground
         $0.setTitleColor(.tintColor, for: .normal)

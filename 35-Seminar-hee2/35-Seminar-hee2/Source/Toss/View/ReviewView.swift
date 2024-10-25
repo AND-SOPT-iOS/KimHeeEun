@@ -106,7 +106,6 @@ final class ReviewView: UIView {
             $0.leading.equalToSuperview().inset(20)
             $0.height.equalTo(30)
         }
-        
         reviewTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(20)
             $0.leading.equalToSuperview().inset(20)
