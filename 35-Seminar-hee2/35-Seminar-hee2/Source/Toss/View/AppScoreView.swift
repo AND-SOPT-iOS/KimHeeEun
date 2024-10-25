@@ -10,6 +10,7 @@ import UIKit
 import Then
 
 final class AppScoreView: UIView {
+    
     private let titleLabel = UILabel().then {
         $0.text = "평가 및 리뷰"
         $0.font = .systemFont(ofSize: 24, weight: .bold)
@@ -28,7 +29,7 @@ final class AppScoreView: UIView {
         $0.textColor = .secondaryLabel
         $0.textAlignment = .center
     }
-    lazy var allReviewButton = UIButton().then {
+    public lazy var allReviewButton = UIButton().then {
         $0.setTitle("모두 보기", for: .normal)
         $0.backgroundColor = .systemBackground
         $0.setTitleColor(.tintColor, for: .normal)
@@ -68,4 +69,5 @@ final class AppScoreView: UIView {
             $0.top.trailing.equalToSuperview().inset(20)
         }
     }
+    
 }

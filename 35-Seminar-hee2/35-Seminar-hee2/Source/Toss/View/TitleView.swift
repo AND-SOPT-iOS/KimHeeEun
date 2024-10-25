@@ -10,34 +10,31 @@ import Then
 import UIKit
 
 class TitleView: UIView {
-    let appIconImageView = UIImageView().then {
+    
+    private let appIconImageView = UIImageView().then {
         $0.image = UIImage(named: "icon_toss")
         $0.layer.cornerRadius = 25
         $0.clipsToBounds = true
     }
-    
-    let titleLabel = UILabel().then {
+    private let titleLabel = UILabel().then {
         $0.text = "토스"
         $0.textAlignment = .left
         $0.textColor = .label
         $0.font = .systemFont(ofSize: 20)
     }
-    
-    let subTitleLabel = UILabel().then {
+    private let subTitleLabel = UILabel().then {
         $0.text = "금융이 쉬워진다"
         $0.textAlignment = .left
         $0.textColor = .secondaryLabel
         $0.font = .systemFont(ofSize: 15)
     }
-    
-    lazy var installButton = UIButton().then {
+    public lazy var installButton = UIButton().then {
         $0.setTitle("받기", for: .normal) // bold 처리 해야함.
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemBlue
         $0.layer.cornerRadius = 15
     }
-    
-    lazy var shareButton = UIButton().then {
+    public lazy var shareButton = UIButton().then {
         $0.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         $0.tintColor = .systemBlue
     }
@@ -53,13 +50,13 @@ class TitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUI() {
+    private func setUI() {
         [appIconImageView, titleLabel, subTitleLabel, installButton, shareButton].forEach {
             self.addSubview($0)
         }
     }
     
-    func setLayout() {
+    private func setLayout() {
         appIconImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
             $0.top.bottom.equalToSuperview().inset(20)
@@ -86,4 +83,5 @@ class TitleView: UIView {
             $0.width.height.equalTo(30)
         }
     }
+    
 }

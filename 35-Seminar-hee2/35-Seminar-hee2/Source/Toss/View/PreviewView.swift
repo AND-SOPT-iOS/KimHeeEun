@@ -10,6 +10,7 @@ import UIKit
 import Then
 
 final class PreviewView: UIView {
+    
     private let titleLabel = UILabel().then {
         $0.text = "미리보기"
         $0.font = .systemFont(ofSize: 24, weight: .bold)
@@ -50,4 +51,5 @@ final class PreviewView: UIView {
             $0.height.equalTo(400)
         }
     }
+    
 }

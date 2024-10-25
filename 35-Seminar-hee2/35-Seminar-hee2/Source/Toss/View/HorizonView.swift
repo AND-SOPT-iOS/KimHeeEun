@@ -10,6 +10,7 @@ import UIKit
 import Then
 
 private class HorizonView: UIView {
+    
     private let lineView = UIView().then {
         $0.backgroundColor = .secondarySystemFill
     }
@@ -35,4 +36,5 @@ private class HorizonView: UIView {
             $0.height.equalTo(1)
         }
     }
+    
 }

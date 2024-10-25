@@ -10,6 +10,7 @@ import Then
 import UIKit
 
 final class SubTitleView: UIView {
+    
     private let examView = UIView().then {
         $0.backgroundColor = .systemBackground
     }
@@ -42,13 +43,9 @@ final class SubTitleView: UIView {
     
     private func setUI() {
         self.addSubview(examView)
-        
-        examView.addSubview(titleLabel)
-        examView.addSubview(numberLabel)
-        examView.addSubview(bottomLabel)
-//        [titleLabel, numberLabel, bottomLabel].forEach {
-//            subView.addSubview($0)
-//        }
+        [titleLabel, numberLabel, bottomLabel].forEach {
+            examView.addSubview($0)
+        }
     }
     
     private func setLayout() {
@@ -71,4 +68,5 @@ final class SubTitleView: UIView {
             $0.top.equalTo(numberLabel.snp.bottom).offset(5)
         }
     }
+    
 }
