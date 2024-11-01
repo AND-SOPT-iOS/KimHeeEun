@@ -68,7 +68,7 @@ class ChartCell: UITableViewCell {
         }
     }
     
-    public func configure(app: App) {
+    func configure(app: App) {
         titleLabel.text = app.title
         iconImageView.image = app.iconImage
         rankingLabel.text = "\(app.ranking)"
