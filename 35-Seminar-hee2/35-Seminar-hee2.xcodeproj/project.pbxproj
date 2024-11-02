@@ -7,58 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970061E52CBA452E002DA8BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 970061E42CBA452E002DA8BD /* SnapKit */; };
+		970062032CBA5B12002DA8BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 970062022CBA5B12002DA8BD /* SnapKit */; };
+		977386B52CCAA334009A5A96 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 977386B42CCAA334009A5A96 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar-hee1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		970061C72CBA40C9002DA8BD /* 35-Seminar-hee2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar-hee2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9742D53D2CB108C80011D0A4 /* Exceptions for "35-Seminar-hee1" folder in "35-Seminar-hee1" target */ = {
+		970061D92CBA40CA002DA8BD /* Exceptions for "35-Seminar-hee2" folder in "35-Seminar-hee2" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */;
+			target = 970061C62CBA40C9002DA8BD /* 35-Seminar-hee2 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */ = {
+		970061C92CBA40C9002DA8BD /* 35-Seminar-hee2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9742D53D2CB108C80011D0A4 /* Exceptions for "35-Seminar-hee1" folder in "35-Seminar-hee1" target */,
+				970061D92CBA40CA002DA8BD /* Exceptions for "35-Seminar-hee2" folder in "35-Seminar-hee2" target */,
 			);
-			path = "35-Seminar-hee1";
+			path = "35-Seminar-hee2";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9742D5282CB108C70011D0A4 /* Frameworks */ = {
+		970061C42CBA40C9002DA8BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970061E52CBA452E002DA8BD /* SnapKit in Frameworks */,
+				970062032CBA5B12002DA8BD /* SnapKit in Frameworks */,
+				977386B52CCAA334009A5A96 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9742D5222CB108C70011D0A4 = {
+		970061BE2CBA40C9002DA8BD = {
 			isa = PBXGroup;
 			children = (
-				9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */,
-				9742D52C2CB108C70011D0A4 /* Products */,
+				970061C92CBA40C9002DA8BD /* 35-Seminar-hee2 */,
+				970061C82CBA40C9002DA8BD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9742D52C2CB108C70011D0A4 /* Products */ = {
+		970061C82CBA40C9002DA8BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */,
+				970061C72CBA40C9002DA8BD /* 35-Seminar-hee2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,68 +68,70 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */ = {
+		970061C62CBA40C9002DA8BD /* 35-Seminar-hee2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9742D53E2CB108C80011D0A4 /* Build configuration list for PBXNativeTarget "35-Seminar-hee1" */;
+			buildConfigurationList = 970061DA2CBA40CA002DA8BD /* Build configuration list for PBXNativeTarget "35-Seminar-hee2" */;
 			buildPhases = (
-				9742D5272CB108C70011D0A4 /* Sources */,
-				9742D5282CB108C70011D0A4 /* Frameworks */,
-				9742D5292CB108C70011D0A4 /* Resources */,
+				970061C32CBA40C9002DA8BD /* Sources */,
+				970061C42CBA40C9002DA8BD /* Frameworks */,
+				970061C52CBA40C9002DA8BD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */,
+				970061C92CBA40C9002DA8BD /* 35-Seminar-hee2 */,
 			);
-			name = "35-Seminar-hee1";
+			name = "35-Seminar-hee2";
 			packageProductDependencies = (
-				970061E42CBA452E002DA8BD /* SnapKit */,
+				970062022CBA5B12002DA8BD /* SnapKit */,
+				977386B42CCAA334009A5A96 /* Then */,
 			);
-			productName = "35-Seminar-hee1";
-			productReference = 9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */;
+			productName = "35-Seminar-hee2";
+			productReference = 970061C72CBA40C9002DA8BD /* 35-Seminar-hee2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9742D5232CB108C70011D0A4 /* Project object */ = {
+		970061BF2CBA40C9002DA8BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					9742D52A2CB108C70011D0A4 = {
+					970061C62CBA40C9002DA8BD = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 9742D5262CB108C70011D0A4 /* Build configuration list for PBXProject "35-Seminar-hee1" */;
+			buildConfigurationList = 970061C22CBA40C9002DA8BD /* Build configuration list for PBXProject "35-Seminar-hee2" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 9742D5222CB108C70011D0A4;
+			mainGroup = 970061BE2CBA40C9002DA8BD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				970062012CBA5B12002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				977386B32CCAA334009A5A96 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 9742D52C2CB108C70011D0A4 /* Products */;
+			productRefGroup = 970061C82CBA40C9002DA8BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */,
+				970061C62CBA40C9002DA8BD /* 35-Seminar-hee2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9742D5292CB108C70011D0A4 /* Resources */ = {
+		970061C52CBA40C9002DA8BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +141,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9742D5272CB108C70011D0A4 /* Sources */ = {
+		970061C32CBA40C9002DA8BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,7 +151,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9742D53F2CB108C80011D0A4 /* Debug */ = {
+		970061DB2CBA40CA002DA8BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -156,7 +160,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2225VQ3TM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "35-Seminar-hee1/Info.plist";
+				INFOPLIST_FILE = "35-Seminar-hee2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -166,7 +170,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -174,7 +178,7 @@
 			};
 			name = Debug;
 		};
-		9742D5402CB108C80011D0A4 /* Release */ = {
+		970061DC2CBA40CA002DA8BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -183,7 +187,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2225VQ3TM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "35-Seminar-hee1/Info.plist";
+				INFOPLIST_FILE = "35-Seminar-hee2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -193,7 +197,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -201,7 +205,7 @@
 			};
 			name = Release;
 		};
-		9742D5412CB108C80011D0A4 /* Debug */ = {
+		970061DD2CBA40CA002DA8BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +268,7 @@
 			};
 			name = Debug;
 		};
-		9742D5422CB108C80011D0A4 /* Release */ = {
+		970061DE2CBA40CA002DA8BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,20 +327,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9742D5262CB108C70011D0A4 /* Build configuration list for PBXProject "35-Seminar-hee1" */ = {
+		970061C22CBA40C9002DA8BD /* Build configuration list for PBXProject "35-Seminar-hee2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9742D5412CB108C80011D0A4 /* Debug */,
-				9742D5422CB108C80011D0A4 /* Release */,
+				970061DD2CBA40CA002DA8BD /* Debug */,
+				970061DE2CBA40CA002DA8BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9742D53E2CB108C80011D0A4 /* Build configuration list for PBXNativeTarget "35-Seminar-hee1" */ = {
+		970061DA2CBA40CA002DA8BD /* Build configuration list for PBXNativeTarget "35-Seminar-hee2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9742D53F2CB108C80011D0A4 /* Debug */,
-				9742D5402CB108C80011D0A4 /* Release */,
+				970061DB2CBA40CA002DA8BD /* Debug */,
+				970061DC2CBA40CA002DA8BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -344,7 +348,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		970062012CBA5B12002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -352,15 +356,28 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		977386B32CCAA334009A5A96 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		970061E42CBA452E002DA8BD /* SnapKit */ = {
+		970062022CBA5B12002DA8BD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 970062012CBA5B12002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		977386B42CCAA334009A5A96 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 977386B32CCAA334009A5A96 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 9742D5232CB108C70011D0A4 /* Project object */;
+	rootObject = 970061BF2CBA40C9002DA8BD /* Project object */;
 }
