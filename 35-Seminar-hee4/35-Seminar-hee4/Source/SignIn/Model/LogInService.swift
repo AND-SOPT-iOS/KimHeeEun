@@ -15,7 +15,6 @@ class LogInService {
         password: String,
         completion: @escaping (Result<Bool, NetworkError>) -> Void
     ) {
-        
         let url = Environment.baseURL + "/login"
         
         let parameters = LogInRequest(
@@ -40,11 +39,24 @@ class LogInService {
             }
             
             switch response.result {
-            case .success:
-                /// 네트워크 요청이 성공적으로 진행되었을 때, escaping closure을 실행하고 bool값을 success로 넘김.
-                completion(.success(true))
+            case .success(let responseData):
+                guard let data = responseData else {
+                    completion(.failure(.decodingError)) // 데이터가 없으면 실패 처리
+                    return
+                } // JSON 형식으로 return되는 response.result?
+                do { // Data를 JSON으로 변환
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let result = json["result"] as? [String: Any], // dictionary값 안전 추출 : 'result' 객체 접근
+                       let token = result["token"] as? String { // dictionary 값 안전 추출 : 'token' 추출
+                        TokenManager.shared.saveToken(token) // TokenManager에 토큰을 저장
+                        completion(.success(true))
+                    } else {
+                        completion(.failure(.tokenError))
+                    }
+                } catch {
+                    completion(.failure(.decodingError)) // JSON 파싱 오류 시
+                }
             case .failure:
-                /// 네트워크 요청이 실패했을 때, 어떤 이유인지 파악하여 escaping closure을 실행하고 파악된 error를 넘김
                 let error = self.handleStatusCode(statusCode, data: data)
                 completion(.failure(error))
             }
