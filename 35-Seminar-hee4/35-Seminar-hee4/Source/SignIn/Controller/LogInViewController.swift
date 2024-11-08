@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController { //hee eun
 
     private let userNameLabel = UILabel()
     private let userPasswordLabel = UILabel()
@@ -16,6 +16,7 @@ class LogInViewController: UIViewController {
     private var logInButton = UIButton()
     private var resultLabel = UILabel()
     private var myHobbyButton = UIButton()
+    private var hobbyLabel = UILabel()
     
     let userService = UserService()
     
@@ -34,7 +35,8 @@ class LogInViewController: UIViewController {
             userPasswordTextField,
             logInButton,
             resultLabel,
-            myHobbyButton
+            myHobbyButton,
+            hobbyLabel
         )
     }
     
@@ -83,7 +85,13 @@ class LogInViewController: UIViewController {
             $0.setTitleColor(.white, for: .normal)
             $0.backgroundColor = .systemBlue
             $0.layer.cornerRadius = 10
-            //$0.addTarget(self, action: #selector(myHobbyButtonTapped), for: .touchUpInside) // 구현예정.
+            $0.addTarget(self, action: #selector(myHobbyButtonTapped), for: .touchUpInside) // 구현예정.
+        }
+        hobbyLabel.do {
+            $0.textColor = .systemRed
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
+            $0.font = .systemFont(ofSize: 12)
         }
     }
     
@@ -118,6 +126,10 @@ class LogInViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)
         }
+        hobbyLabel.snp.makeConstraints {
+            $0.top.equalTo(myHobbyButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+        }
     }
     
     @objc func logInButtonTapped() {
@@ -136,6 +148,24 @@ class LogInViewController: UIViewController {
                     text = error.errorMessage //실패했을 때
                 }
                 self.resultLabel.text = text
+            }
+        }
+    }
+    
+    @objc func myHobbyButtonTapped() {
+        userService.getUserHobby(){
+            [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                var text: String
+                
+                switch result {
+                case .success(let hobby):
+                    text = "취미는\(hobby)" //성공했을 때 hee eun
+                case let .failure(error):
+                    text = error.errorMessage //실패했을 때
+                }
+                self.hobbyLabel.text = text
             }
         }
     }
