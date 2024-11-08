@@ -7,58 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970061E52CBA452E002DA8BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 970061E42CBA452E002DA8BD /* SnapKit */; };
+		9773888D2CD5EDC6009A5A96 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 9773888C2CD5EDC6009A5A96 /* Then */; };
+		977388902CD5EDD5009A5A96 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9773888F2CD5EDD5009A5A96 /* SnapKit */; };
+		977388932CD5F123009A5A96 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 977388922CD5F123009A5A96 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar-hee1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		977388362CD5ED56009A5A96 /* 35-Seminar-hee4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar-hee4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9742D53D2CB108C80011D0A4 /* Exceptions for "35-Seminar-hee1" folder in "35-Seminar-hee1" target */ = {
+		977388482CD5ED56009A5A96 /* Exceptions for "35-Seminar-hee4" folder in "35-Seminar-hee4" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */;
+			target = 977388352CD5ED56009A5A96 /* 35-Seminar-hee4 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */ = {
+		977388382CD5ED56009A5A96 /* 35-Seminar-hee4 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9742D53D2CB108C80011D0A4 /* Exceptions for "35-Seminar-hee1" folder in "35-Seminar-hee1" target */,
+				977388482CD5ED56009A5A96 /* Exceptions for "35-Seminar-hee4" folder in "35-Seminar-hee4" target */,
 			);
-			path = "35-Seminar-hee1";
+			path = "35-Seminar-hee4";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9742D5282CB108C70011D0A4 /* Frameworks */ = {
+		977388332CD5ED56009A5A96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970061E52CBA452E002DA8BD /* SnapKit in Frameworks */,
+				977388932CD5F123009A5A96 /* Alamofire in Frameworks */,
+				9773888D2CD5EDC6009A5A96 /* Then in Frameworks */,
+				977388902CD5EDD5009A5A96 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9742D5222CB108C70011D0A4 = {
+		9773882D2CD5ED56009A5A96 = {
 			isa = PBXGroup;
 			children = (
-				9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */,
-				9742D52C2CB108C70011D0A4 /* Products */,
+				977388382CD5ED56009A5A96 /* 35-Seminar-hee4 */,
+				977388372CD5ED56009A5A96 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9742D52C2CB108C70011D0A4 /* Products */ = {
+		977388372CD5ED56009A5A96 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */,
+				977388362CD5ED56009A5A96 /* 35-Seminar-hee4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,68 +70,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */ = {
+		977388352CD5ED56009A5A96 /* 35-Seminar-hee4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9742D53E2CB108C80011D0A4 /* Build configuration list for PBXNativeTarget "35-Seminar-hee1" */;
+			buildConfigurationList = 977388492CD5ED56009A5A96 /* Build configuration list for PBXNativeTarget "35-Seminar-hee4" */;
 			buildPhases = (
-				9742D5272CB108C70011D0A4 /* Sources */,
-				9742D5282CB108C70011D0A4 /* Frameworks */,
-				9742D5292CB108C70011D0A4 /* Resources */,
+				977388322CD5ED56009A5A96 /* Sources */,
+				977388332CD5ED56009A5A96 /* Frameworks */,
+				977388342CD5ED56009A5A96 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				9742D52D2CB108C70011D0A4 /* 35-Seminar-hee1 */,
+				977388382CD5ED56009A5A96 /* 35-Seminar-hee4 */,
 			);
-			name = "35-Seminar-hee1";
+			name = "35-Seminar-hee4";
 			packageProductDependencies = (
-				970061E42CBA452E002DA8BD /* SnapKit */,
+				9773888C2CD5EDC6009A5A96 /* Then */,
+				9773888F2CD5EDD5009A5A96 /* SnapKit */,
+				977388922CD5F123009A5A96 /* Alamofire */,
 			);
-			productName = "35-Seminar-hee1";
-			productReference = 9742D52B2CB108C70011D0A4 /* 35-Seminar-hee1.app */;
+			productName = "35-Seminar-hee4";
+			productReference = 977388362CD5ED56009A5A96 /* 35-Seminar-hee4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9742D5232CB108C70011D0A4 /* Project object */ = {
+		9773882E2CD5ED56009A5A96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					9742D52A2CB108C70011D0A4 = {
+					977388352CD5ED56009A5A96 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 9742D5262CB108C70011D0A4 /* Build configuration list for PBXProject "35-Seminar-hee1" */;
+			buildConfigurationList = 977388312CD5ED56009A5A96 /* Build configuration list for PBXProject "35-Seminar-hee4" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 9742D5222CB108C70011D0A4;
+			mainGroup = 9773882D2CD5ED56009A5A96;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9773888B2CD5EDC6009A5A96 /* XCRemoteSwiftPackageReference "Then" */,
+				9773888E2CD5EDD5009A5A96 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				977388912CD5F123009A5A96 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 9742D52C2CB108C70011D0A4 /* Products */;
+			productRefGroup = 977388372CD5ED56009A5A96 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9742D52A2CB108C70011D0A4 /* 35-Seminar-hee1 */,
+				977388352CD5ED56009A5A96 /* 35-Seminar-hee4 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9742D5292CB108C70011D0A4 /* Resources */ = {
+		977388342CD5ED56009A5A96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +145,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9742D5272CB108C70011D0A4 /* Sources */ = {
+		977388322CD5ED56009A5A96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,7 +155,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9742D53F2CB108C80011D0A4 /* Debug */ = {
+		9773884A2CD5ED56009A5A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -156,7 +164,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2225VQ3TM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "35-Seminar-hee1/Info.plist";
+				INFOPLIST_FILE = "35-Seminar-hee4/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -166,7 +174,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -174,7 +182,7 @@
 			};
 			name = Debug;
 		};
-		9742D5402CB108C80011D0A4 /* Release */ = {
+		9773884B2CD5ED56009A5A96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -183,7 +191,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2225VQ3TM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "35-Seminar-hee1/Info.plist";
+				INFOPLIST_FILE = "35-Seminar-hee4/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -193,7 +201,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-5-Seminar-hee4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -201,8 +209,10 @@
 			};
 			name = Release;
 		};
-		9742D5412CB108C80011D0A4 /* Debug */ = {
+		9773884C2CD5ED56009A5A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 977388382CD5ED56009A5A96 /* 35-Seminar-hee4 */;
+			baseConfigurationReferenceRelativePath = Source/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -264,8 +274,10 @@
 			};
 			name = Debug;
 		};
-		9742D5422CB108C80011D0A4 /* Release */ = {
+		9773884D2CD5ED56009A5A96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 977388382CD5ED56009A5A96 /* 35-Seminar-hee4 */;
+			baseConfigurationReferenceRelativePath = Source/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -323,20 +335,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9742D5262CB108C70011D0A4 /* Build configuration list for PBXProject "35-Seminar-hee1" */ = {
+		977388312CD5ED56009A5A96 /* Build configuration list for PBXProject "35-Seminar-hee4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9742D5412CB108C80011D0A4 /* Debug */,
-				9742D5422CB108C80011D0A4 /* Release */,
+				9773884C2CD5ED56009A5A96 /* Debug */,
+				9773884D2CD5ED56009A5A96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9742D53E2CB108C80011D0A4 /* Build configuration list for PBXNativeTarget "35-Seminar-hee1" */ = {
+		977388492CD5ED56009A5A96 /* Build configuration list for PBXNativeTarget "35-Seminar-hee4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9742D53F2CB108C80011D0A4 /* Debug */,
-				9742D5402CB108C80011D0A4 /* Release */,
+				9773884A2CD5ED56009A5A96 /* Debug */,
+				9773884B2CD5ED56009A5A96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -344,7 +356,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		9773888B2CD5EDC6009A5A96 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		9773888E2CD5EDD5009A5A96 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -352,15 +372,33 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		977388912CD5F123009A5A96 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		970061E42CBA452E002DA8BD /* SnapKit */ = {
+		9773888C2CD5EDC6009A5A96 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 970061E32CBA452E002DA8BD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 9773888B2CD5EDC6009A5A96 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		9773888F2CD5EDD5009A5A96 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9773888E2CD5EDD5009A5A96 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		977388922CD5F123009A5A96 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 977388912CD5F123009A5A96 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 9742D5232CB108C70011D0A4 /* Project object */;
+	rootObject = 9773882E2CD5ED56009A5A96 /* Project object */;
 }

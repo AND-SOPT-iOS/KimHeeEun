@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class ViewController: UIViewController {
     private let titleLabel: UILabel = {
@@ -43,6 +43,12 @@ class ViewController: UIViewController {
         return textView
     }()
     
+    public let nickNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = " "
+        return label
+    }()
+    
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
@@ -64,11 +70,10 @@ class ViewController: UIViewController {
     
     private var pushMode = true {
         didSet {
-            updateUI() // pushMode 변경 시마다 updateUI()호출
+            updateUI()
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -83,13 +88,14 @@ class ViewController: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, imageView, subTitleLabel,feedbackTextView, nextButton, pushModeToggleButton].forEach {
+        [titleLabel, imageView, subTitleLabel,feedbackTextView, nickNameLabel, nextButton, pushModeToggleButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
     }
     
     private func setLayout() {
+        // - Todo : SnapKit통해 오토레이아웃 다시 잡기 - //
         NSLayoutConstraint.activate(
             [
                 titleLabel.topAnchor.constraint(
@@ -122,8 +128,12 @@ class ViewController: UIViewController {
                     constant: -20
                 ),
                 feedbackTextView.bottomAnchor.constraint(
-                    equalTo: nextButton.topAnchor, constant: -20
+                    equalTo: nickNameLabel.topAnchor, constant: -20
                 ),
+                
+                nickNameLabel.topAnchor.constraint(equalTo: feedbackTextView.bottomAnchor, constant: 20),
+                nickNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                nickNameLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
                 
                 nextButton.bottomAnchor.constraint(equalTo: pushModeToggleButton.topAnchor, constant: -20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -156,13 +166,19 @@ class ViewController: UIViewController {
         transitionToNextViewController()
     }
     private func transitionToNextViewController() {
-        let nextViewController = DetailViewController()
+        let nextViewController = DetailViewController_Closer()
         
-        guard let title = feedbackTextView.text else {
-            return
+        nextViewController.completionHandler = { [weak self] nickname in
+            guard let self else { return }
+            self.nickNameLabel.text = nickname
         }
         
-        nextViewController.dataBine(title: title)
+        //nextViewController.delegate = self
+//        guard let title = feedbackTextView.text else {
+//            return
+//        }
+
+        //nextViewController.dataBine(title: title)
         
         if pushMode {
             self.navigationController?.pushViewController(
@@ -182,4 +198,10 @@ class ViewController: UIViewController {
         self.updateUI()
     }
     
+}
+
+extension ViewController: NicknameDelegate {
+    func dataBind(nickname: String) {
+        self.nickNameLabel.text = nickname
+    }
 }

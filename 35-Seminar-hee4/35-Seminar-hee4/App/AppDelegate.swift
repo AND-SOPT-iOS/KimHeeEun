@@ -1,12 +1,12 @@
 //
 //  AppDelegate.swift
-//  35-Seminar-hee1
+//  35-Seminar-hee4
 //
-//  Created by 김희은 on 10/5/24.
+//  Created by 김희은 on 11/2/24.
 //
 
 import UIKit
-//$0, $1, $2 ... - param을 축약
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
