@@ -20,6 +20,7 @@ enum NetworkError: Error { // 서버 파트장이 만들어 준 명세서에 따
     case wrongPassword
     case invalidPassword
     case tokenError
+    case invalidToken
 
     var errorMessage: String {
         switch self {
@@ -47,6 +48,8 @@ enum NetworkError: Error { // 서버 파트장이 만들어 준 명세서에 따
             return "비밀번호 형식이 잘못되었습니다"
         case .tokenError:
             return "토큰 요청에 실패하였습니다."
+        case .invalidToken:
+            return "유효한 토큰이 아닙니다."
             
         }
     }

@@ -14,26 +14,23 @@ class UserService {
 
   /// 등록 API 콜이 일어나는 메소드
   /// 파라미터는 Request Body에 필요한 것들
-  func register(
+  func signUp(
     username: String,
     password: String,
     hobby: String,
     completion: @escaping (Result<Bool, NetworkError>) -> Void
   ) {
       
-      /// baseURL + /user = http://211.188.53.75:8080/user
       let url = Environment.baseURL + "/user"
       
       /// 파라미터는 Request Body,
       /// HTTP 요청에서 전송되는 데이터를 일반적으로 "parameters" 또는 "params"라고 부름.
       /// GET 요청의 쿼리 파라미터나 POST 요청의 바디 데이터 모두 "parameters"로 통일해서 부름
-      let parameters = RegisterRequest(
+      let parameters = SignUpRequest(
         username: username,
         password: password,
         hobby: hobby
       )
-      
-      //header??//
       
       /// Request시 url, method, parameters, 인코딩 방식을 파라미터로 넘겨주어야 함.
       AF.request(
@@ -44,7 +41,6 @@ class UserService {
       )
       .validate()
       .response { [weak self] response in
-          
           /// 다양한 정보가 넘어오게 되는데, 우리에게 중요한 것은 보통 statusCode와 data임
           /// self를 해준 이유는 클래스 내의 다른 함수에 접근해야 하고 response가 escaping closure이기 때문
           guard let statusCode = response.response?.statusCode,
@@ -73,6 +69,54 @@ class UserService {
           }
       }
   }
+
+    func logIn(
+        username: String,
+        password: String,
+        completion: @escaping (Result<LogInResponse, NetworkError>) -> Void
+    ) {
+        let url = Environment.baseURL + "/login"
+        
+        let parameters = LogInRequest(
+            username: username,
+            password: password
+        )
+        
+        AF.request(
+            url,
+            method: .post,
+            parameters: parameters,
+            encoder: JSONParameterEncoder.default
+        )
+        .validate()
+        .response { [weak self] response in
+            guard let statusCode = response.response?.statusCode,
+                  let data = response.data,
+                  let self
+            else {
+                completion(.failure(.unknownError))
+                return
+            }
+            
+            switch response.result {
+            case .success:
+                do {
+                    let logInResponse = try JSONDecoder().decode(LogInResponse.self, from: data)
+                    let token = logInResponse.result.token
+                    TokenManager.shared.saveToken(token)
+                    completion(.success(logInResponse))
+                } catch {
+                    completion(.failure(.unknownError))
+                }
+                
+            case .failure:
+                let error = self.handleStatusCode(statusCode, data: data)
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
 // 성공하면 Alamofire를 따르면 되지만, 실패 할 경우의 에러처리를 우리가 분기처리 해줄 수 있어야 함.
   /// 서버의 명세서 기반으로 에러 처리를 진행해줌
   func handleStatusCode(
@@ -80,27 +124,32 @@ class UserService {
     data: Data
   ) -> NetworkError {
     let errorCode = decodeError(data: data)
-    switch (statusCode, errorCode) { // tuple 형태로 스위치문 진행.
-    case (400, "00"):
-      return .invalidRequest
-    case (400, "01"):
-      return .expressionError
-    case (404, ""):
-      return .invalidURL
-    case (409, "00"):
-      return .duplicateError
-    case (500, ""):
-      return .serverError
-    default:
-      return .unknownError
-    }
+      switch (statusCode, errorCode) { // tuple 형태로 스위치문 진행.
+      case (400, "00"):
+          return .invalidRequest
+      case (400, "01"):
+          return .expressionError
+      case (400, "02"):
+          return .invalidPassword // password 규격 에러
+      case (403, "01"):
+          return .wrongPassword // wrongPassword
+      case (404, ""), (404, "00"):
+          return .invalidURL//.wrong path/method request
+      case (409, "00"):
+          return .duplicateError
+      case (500, ""):
+          return .serverError
+      default:
+          return .unknownError
+      }
   }
 
-  func decodeError(data: Data) -> String {
+
+func decodeError(data: Data) -> String {
     guard let errorResponse = try? JSONDecoder().decode(
-      ErrorResponse.self,
-      from: data
+        ErrorResponse.self,
+        from: data
     ) else { return "" }
     return errorResponse.code // 00 / 01 등의 스트링 값으로 return 하게 됨
-  }
+}
 }

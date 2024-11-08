@@ -16,6 +16,7 @@ class TokenManager {
     
     func saveToken(_ token: String) {
         self.token = token
+        print("Token saved: \(token)")
     }
     func getToken() -> String? {
         return token
