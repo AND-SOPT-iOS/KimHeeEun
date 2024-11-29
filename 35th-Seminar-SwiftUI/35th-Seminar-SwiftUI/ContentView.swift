@@ -49,11 +49,14 @@ struct ChartRow: View {
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        NavigationStack {
+            //            VStack {
+            
             Text("AppStore")
                 .font(.title3)
                 .bold()
                 .padding(10)
+            
             List {
                 Section(header: Text("인기차트")
                     .font(.headline)
@@ -82,8 +85,6 @@ struct ContentView: View {
                     }
             }
             .listStyle(.insetGrouped)
-            
-            Spacer()
             Button {
                 //actions
             }
@@ -96,9 +97,13 @@ struct ContentView: View {
                         .foregroundStyle(.white)
                         .backgroundStyle(.blue)
                 }
+                
             }
+            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
             .padding()
         }
+        .navigationTitle("App Store")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
