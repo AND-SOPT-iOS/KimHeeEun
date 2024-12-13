@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View {    
     let columns = [GridItem(.flexible())]
     let rows = [GridItem(.flexible())]
                          
@@ -15,6 +15,24 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 ScrollView(.vertical) {
+                    HStack() {
+                        Text("Instagram")
+                            .font(.largeTitle)
+                        //.font(.custom("Apple Chancery", size: 30)) // 폰트 추가 필요.
+                        Spacer()
+                        HStack {
+                            Image(systemName: "heart")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                            Image(systemName: "square.and.arrow.up")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                        }
+                    }
+                    .padding()
+                    
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
                             ForEach(1..<100) { num in
@@ -78,25 +96,6 @@ struct ContentView: View {
                     }
                 }
                 .scrollIndicators(.hidden)
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Text("Instagram")
-                        .font(.largeTitle)
-                    //.font(.custom("Apple Chancery", size: 30)) // 폰트 추가 필요.
-                }
-                ToolbarItem(placement: .topBarTrailing){
-                    HStack {
-                        Image(systemName: "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
-                        Image(systemName: "square.and.arrow.up")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
-                    }
-                }
             }
         }
     }
