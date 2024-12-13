@@ -17,7 +17,7 @@ final class ContentViewModel: ObservableObject {
     }
 }
 
-struct ContentView: View {
+struct HomeView: View {
     @StateObject private var viewModel = ContentViewModel()
     
     let columns = [GridItem(.flexible())]
@@ -67,6 +67,34 @@ struct ContentView: View {
                 }
             }
         }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                }
+            HomeView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                }
+            HomeView()
+                .tabItem {
+                    Image(systemName: "plus.square")
+                }
+            HomeView()
+                .tabItem {
+                    Image(systemName: "video")
+                }
+            HomeView()
+                .tabItem {
+                    Image(systemName: "person")
+                }
+        }
+        .tint(Color.black)
     }
 }
 
