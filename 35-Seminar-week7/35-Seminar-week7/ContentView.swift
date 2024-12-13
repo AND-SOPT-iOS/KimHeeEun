@@ -16,26 +16,65 @@ struct ContentView: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: rows) {
                     ForEach(1..<100) { num in
-                        Circle()
-                            .fill(Color.red)
-                            .stroke(Color.blue, lineWidth: 5)
-                            .frame(width: 100, height: 100)
+                        VStack {
+                            Circle()
+                                .fill(Color.red)
+                                .stroke(Color.blue, lineWidth: 5)
+                                .frame(width: 80, height: 80)
+                            Text("id")
+                        }
                     }
                 }
                 .frame(height: 100)
                 .padding()
             }
+            .scrollIndicators(.hidden)
             
             ScrollView(.vertical) {
                 LazyVGrid(columns: columns) {//(columns: columns)
                     ForEach(0..<100) { num in
-                        Rectangle()
-                            .frame(height: 600)
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Circle()
+                                    .fill(Color.red)
+                                    .stroke(Color.blue, lineWidth: 2)
+                                    .frame(width: 50, height: 50)
+                                Text("id")
+                            }
+                            Rectangle()
+                                .fill(Color.blue)
+                            HStack {
+                                Image(systemName: "heart")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 30, height: 30)
+                                Image(systemName: "message")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 30, height: 30)
+                                Image(systemName: "square.and.arrow.up")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 30, height: 30)
+                                Spacer()
+                                Image(systemName: "bookmark")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 30, height: 30)
+                            }
+                            Text("좋아요 4983개")
+                            
+                            Text("samsungLions ")
+                                .foregroundColor(Color.black)
+                            + Text("#구자욱")
+                                .foregroundColor(Color.blue)
+                        }
+                        .frame(height: 600)
                     }
+                    .padding()
                 }
-                .padding(.bottom)
-                .padding(.horizontal)
             }
+            .scrollIndicators(.hidden)
         }
     }
 }
