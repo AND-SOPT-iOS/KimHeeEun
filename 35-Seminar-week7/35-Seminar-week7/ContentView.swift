@@ -14,46 +14,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                            
-                        }
-                        .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                Text("Instagram")
-                                    .font(.largeTitle)
-                                //.font(.custom("Apple Chancery", size: 30)) // 폰트 추가 필요.
-                            }
-                            ToolbarItem(placement: .topBarTrailing){
-                                HStack {
-                                    Image(systemName: "heart")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                    Image(systemName: "square.and.arrow.up")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                }
-                            }
-                        }
-            VStack {
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: rows) {
-                        ForEach(1..<100) { num in
-                            VStack {
-                                Circle()
-                                    .fill(Color.red)
-                                    .stroke(Color.blue, lineWidth: 5)
-                                    .frame(width: 80, height: 80)
-                                Text("id")
-                            }
-                        }
-                    }
-                    .frame(height: 100)
-                    .padding()
-                }
-                .scrollIndicators(.hidden)
-                
                 ScrollView(.vertical) {
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: rows) {
+                            ForEach(1..<100) { num in
+                                VStack {
+                                    Circle()
+                                        .fill(Color.red)
+                                        .stroke(Color.blue, lineWidth: 5)
+                                        .frame(width: 90, height: 90)
+                                    Text("id")
+                                }
+                                .padding(.trailing, 10)
+                            }
+                        }
+                        .frame(height: 100)
+                        .padding()
+                    }
+                    .scrollIndicators(.hidden)
+                    
                     LazyVGrid(columns: columns) {//(columns: columns)
                         ForEach(0..<100) { num in
                             VStack(alignment: .leading) {
@@ -66,7 +45,7 @@ struct ContentView: View {
                                 }
                                 Rectangle()
                                     .fill(Color.blue)
-                                HStack {
+                                HStack(spacing: 10) {
                                     Image(systemName: "heart")
                                         .resizable()
                                         .scaledToFit()
@@ -85,8 +64,9 @@ struct ContentView: View {
                                         .scaledToFit()
                                         .frame(width: 30, height: 30)
                                 }
+                                .padding(.vertical, 10)
                                 Text("좋아요 4983개")
-                                
+                                    
                                 Text("samsungLions ")
                                     .foregroundColor(Color.black)
                                 + Text("#구자욱")
@@ -99,7 +79,25 @@ struct ContentView: View {
                 }
                 .scrollIndicators(.hidden)
             }
-//            .navigationTitle("instagram")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Instagram")
+                        .font(.largeTitle)
+                    //.font(.custom("Apple Chancery", size: 30)) // 폰트 추가 필요.
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    HStack {
+                        Image(systemName: "heart")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                        Image(systemName: "square.and.arrow.up")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                    }
+                }
+            }
         }
     }
 }
