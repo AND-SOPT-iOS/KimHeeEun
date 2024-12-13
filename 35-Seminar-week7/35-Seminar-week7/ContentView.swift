@@ -7,7 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {    
+import Foundation
+
+final class ContentViewModel: ObservableObject {
+    let storyDatas: [StoryUserData]
+    
+    init(storyDatas: [StoryUserData] = mockStoryData) {
+        self.storyDatas = storyDatas
+    }
+}
+
+struct ContentView: View {
+    @StateObject private var viewModel = ContentViewModel()
+    
     let columns = [GridItem(.flexible())]
     let rows = [GridItem(.flexible())]
                          
@@ -35,14 +47,8 @@ struct ContentView: View {
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
-                            ForEach(1..<100) { num in
-                                VStack {
-                                    Circle()
-                                        .fill(Color.red)
-                                        .stroke(Color.blue, lineWidth: 5)
-                                        .frame(width: 90, height: 90)
-                                    Text("id")
-                                }
+                            ForEach(0..<15) { num in
+                                StroyCell(storyData: viewModel.storyDatas[num])
                                 .padding(.trailing, 10)
                             }
                         }
