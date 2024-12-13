@@ -16,11 +16,13 @@ struct ContentView: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: rows) {
                     ForEach(1..<100) { num in
-                        Rectangle()
-                            .frame(width: 50, height: 50)
+                        Circle()
+                            .fill(Color.red)
+                            .stroke(Color.blue, lineWidth: 5)
+                            .frame(width: 100, height: 100)
                     }
                 }
-                .frame(height: 50)
+                .frame(height: 100)
                 .padding()
             }
             
