@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    let columns = [GridItem(.flexible())]
     let rows = [GridItem(.flexible())]
                          
     var body: some View {
@@ -27,10 +27,10 @@ struct ContentView: View {
             }
             
             ScrollView(.vertical) {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: columns) {//(columns: columns)
                     ForEach(0..<100) { num in
                         Rectangle()
-                            .frame(height: 100)
+                            .frame(height: 600)
                     }
                 }
                 .padding(.bottom)
