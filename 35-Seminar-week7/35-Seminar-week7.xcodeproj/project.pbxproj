@@ -75,10 +75,10 @@
 		974EF8712CFAE83B00B05FB6 = {
 			isa = PBXGroup;
 			children = (
-				974EF87C2CFAE83B00B05FB6 /* 35-Seminar-week7 */,
 				974EF88D2CFAE83C00B05FB6 /* 35-Seminar-week7Tests */,
 				974EF8972CFAE83C00B05FB6 /* 35-Seminar-week7UITests */,
 				974EF87B2CFAE83B00B05FB6 /* Products */,
+				974EF87C2CFAE83B00B05FB6 /* 35-Seminar-week7 */,
 			);
 			sourceTree = "<group>";
 		};

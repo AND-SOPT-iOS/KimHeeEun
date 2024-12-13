@@ -7,18 +7,8 @@
 
 import SwiftUI
 
-final class ContentViewModel: ObservableObject {
-    let storyDatas: [StoryUserData]
-    let postDatas: [PostData]
-    
-    init(storyDatas: [StoryUserData] = mockStoryData, postDatas: [PostData] = mockPostData) {
-        self.storyDatas = storyDatas
-        self.postDatas = postDatas
-    }
-}
-
 struct HomeView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    private var viewModel = HomeViewModel()
     
     let columns = [GridItem(.flexible())]
     let rows = [GridItem(.flexible())]
