@@ -12,69 +12,94 @@ struct ContentView: View {
     let rows = [GridItem(.flexible())]
                          
     var body: some View {
-        VStack {
-            ScrollView(.horizontal) {
-                LazyHGrid(rows: rows) {
-                    ForEach(1..<100) { num in
-                        VStack {
-                            Circle()
-                                .fill(Color.red)
-                                .stroke(Color.blue, lineWidth: 5)
-                                .frame(width: 80, height: 80)
-                            Text("id")
+        NavigationStack {
+            VStack {
+                            
                         }
-                    }
-                }
-                .frame(height: 100)
-                .padding()
-            }
-            .scrollIndicators(.hidden)
-            
-            ScrollView(.vertical) {
-                LazyVGrid(columns: columns) {//(columns: columns)
-                    ForEach(0..<100) { num in
-                        VStack(alignment: .leading) {
-                            HStack {
+                        .toolbar {
+                            ToolbarItem(placement: .topBarLeading) {
+                                Text("Instagram")
+                                    .font(.largeTitle)
+                                //.font(.custom("Apple Chancery", size: 30)) // 폰트 추가 필요.
+                            }
+                            ToolbarItem(placement: .topBarTrailing){
+                                HStack {
+                                    Image(systemName: "heart")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                    Image(systemName: "square.and.arrow.up")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                }
+                            }
+                        }
+            VStack {
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: rows) {
+                        ForEach(1..<100) { num in
+                            VStack {
                                 Circle()
                                     .fill(Color.red)
-                                    .stroke(Color.blue, lineWidth: 2)
-                                    .frame(width: 50, height: 50)
+                                    .stroke(Color.blue, lineWidth: 5)
+                                    .frame(width: 80, height: 80)
                                 Text("id")
                             }
-                            Rectangle()
-                                .fill(Color.blue)
-                            HStack {
-                                Image(systemName: "heart")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 30, height: 30)
-                                Image(systemName: "message")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 30, height: 30)
-                                Image(systemName: "square.and.arrow.up")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 30, height: 30)
-                                Spacer()
-                                Image(systemName: "bookmark")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 30, height: 30)
-                            }
-                            Text("좋아요 4983개")
-                            
-                            Text("samsungLions ")
-                                .foregroundColor(Color.black)
-                            + Text("#구자욱")
-                                .foregroundColor(Color.blue)
                         }
-                        .frame(height: 600)
                     }
+                    .frame(height: 100)
                     .padding()
                 }
+                .scrollIndicators(.hidden)
+                
+                ScrollView(.vertical) {
+                    LazyVGrid(columns: columns) {//(columns: columns)
+                        ForEach(0..<100) { num in
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Circle()
+                                        .fill(Color.red)
+                                        .stroke(Color.blue, lineWidth: 2)
+                                        .frame(width: 50, height: 50)
+                                    Text("id")
+                                }
+                                Rectangle()
+                                    .fill(Color.blue)
+                                HStack {
+                                    Image(systemName: "heart")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                    Image(systemName: "message")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                    Image(systemName: "square.and.arrow.up")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                    Spacer()
+                                    Image(systemName: "bookmark")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 30, height: 30)
+                                }
+                                Text("좋아요 4983개")
+                                
+                                Text("samsungLions ")
+                                    .foregroundColor(Color.black)
+                                + Text("#구자욱")
+                                    .foregroundColor(Color.blue)
+                            }
+                            .frame(height: 600)
+                        }
+                        .padding()
+                    }
+                }
+                .scrollIndicators(.hidden)
             }
-            .scrollIndicators(.hidden)
+//            .navigationTitle("instagram")
         }
     }
 }
