@@ -18,11 +18,11 @@ struct StroyCell: View {
                 storyData.userProfileImage
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 90, height: 90)
+                    .frame(width: 80, height: 80)
                     .clipShape(Circle())
                 Circle()
                     .stroke(strokeColor, lineWidth: 5) // 테두리
-                    .frame(width: 100, height: 100)
+                    .frame(width: 90, height: 90)
                     .foregroundColor(Color.clear)
             }
             Text(storyData.userID)
