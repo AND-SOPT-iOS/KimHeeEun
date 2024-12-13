@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-import Foundation
-
 final class ContentViewModel: ObservableObject {
     let storyDatas: [StoryUserData]
+    let postDatas: [PostData]
     
-    init(storyDatas: [StoryUserData] = mockStoryData) {
+    init(storyDatas: [StoryUserData] = mockStoryData, postDatas: [PostData] = mockPostData) {
         self.storyDatas = storyDatas
+        self.postDatas = postDatas
     }
 }
 
@@ -49,7 +49,7 @@ struct ContentView: View {
                         LazyHGrid(rows: rows) {
                             ForEach(0..<15) { num in
                                 StroyCell(storyData: viewModel.storyDatas[num])
-                                .padding(.trailing, 10)
+                                    .padding(.trailing, 10)
                             }
                         }
                         .frame(height: 100)
@@ -58,50 +58,13 @@ struct ContentView: View {
                     .scrollIndicators(.hidden)
                     
                     LazyVGrid(columns: columns) {//(columns: columns)
-                        ForEach(0..<100) { num in
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Circle()
-                                        .fill(Color.red)
-                                        .stroke(Color.blue, lineWidth: 2)
-                                        .frame(width: 50, height: 50)
-                                    Text("id")
-                                }
-                                Rectangle()
-                                    .fill(Color.blue)
-                                HStack(spacing: 10) {
-                                    Image(systemName: "heart")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                    Image(systemName: "message")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                    Image(systemName: "square.and.arrow.up")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                    Spacer()
-                                    Image(systemName: "bookmark")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                }
-                                .padding(.vertical, 10)
-                                Text("좋아요 4983개")
-                                    
-                                Text("samsungLions ")
-                                    .foregroundColor(Color.black)
-                                + Text("#구자욱")
-                                    .foregroundColor(Color.blue)
-                            }
-                            .frame(height: 600)
+                        ForEach(0..<20) { num in
+                            PostingCell(postingData: viewModel.postDatas[num])
+                                .padding()
                         }
-                        .padding()
                     }
+                    .scrollIndicators(.hidden)
                 }
-                .scrollIndicators(.hidden)
             }
         }
     }

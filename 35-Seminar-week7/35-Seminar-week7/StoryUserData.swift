@@ -14,10 +14,6 @@ struct StoryUserData: Identifiable {
     let storyCategory: StoryCategory
 }
 
-enum StoryCategory {
-    case all, friend
-}
-
 let mockStoryData: [StoryUserData] = [
     StoryUserData(id: UUID(), userID: "h.eeeeun__", userProfileImage: Image(systemName: "person.fill"), storyCategory: .all),
     StoryUserData(id: UUID(), userID: "john_doe", userProfileImage: Image(systemName: "figure.walk"), storyCategory: .all),
